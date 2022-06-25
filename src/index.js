@@ -1,3 +1,27 @@
+import * as React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'mobx-react'
+
+import { Stores } from './stores'
+import { confMobx } from './stores/mobxConf'
+
+import { Routes } from './routes'
+import { Toaster } from './components/Toaster'
+
+import './index.css'
+
+export const stores = new Stores()
+
+confMobx()
+
+render(
+  <Provider {...stores}>
+    <Routes />
+    <Toaster />
+  </Provider>,
+  document.getElementById('root')
+)
+/*
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -31,3 +55,4 @@ const root = ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+*/
