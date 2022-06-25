@@ -23,7 +23,7 @@ function Example() {
 
 console.log(Editor);
 const root = ReactDOM.render(
-    <Example />,
+    <Editor />,
     document.getElementById('root')
 );
 
